@@ -1,0 +1,17 @@
+.row {
+  display: inline-flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.filled {
+  color: var(--color-rating);
+  width: 16px;
+  height: 16px;
+}
+
+.empty {
+  color: var(--color-gray-light);
+  width: 16px;
+  height: 16px;
+}

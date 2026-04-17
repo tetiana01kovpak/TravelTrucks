@@ -1,0 +1,25 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px 60px;
+  border-radius: 200px;
+  border: 1px solid var(--color-gray-light);
+  background: var(--color-white);
+  color: var(--color-main);
+  font-weight: 500;
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  transition: border-color 150ms ease, color 150ms ease;
+}
+
+.button:hover:not(:disabled) {
+  border-color: var(--color-button);
+  color: var(--color-button);
+}
+
+.button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}

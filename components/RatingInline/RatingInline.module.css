@@ -1,0 +1,33 @@
+.row {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+  color: var(--color-main);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+}
+
+.item {
+  display: inline-flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.star {
+  width: 16px;
+  height: 16px;
+  color: var(--color-rating);
+}
+
+.pin {
+  width: 16px;
+  height: 16px;
+  color: var(--color-main);
+  stroke-width: 2;
+}
+
+.underline {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}

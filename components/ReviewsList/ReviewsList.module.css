@@ -1,0 +1,66 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card {
+  padding: 16px;
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-light);
+  border-radius: 10px;
+}
+
+.header {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--color-badges);
+  color: var(--color-button);
+  display: grid;
+  place-items: center;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.person {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.name {
+  margin: 0;
+  font-weight: 600;
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--color-main);
+}
+
+.comment {
+  margin: 0;
+  color: var(--color-text);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+}
+
+.empty {
+  padding: 32px 16px;
+  color: var(--color-gray);
+  text-align: center;
+  background: var(--color-inputs);
+  border-radius: 10px;
+}

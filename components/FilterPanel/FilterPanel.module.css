@@ -1,0 +1,172 @@
+.panel {
+  width: 360px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 24px;
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-light);
+  border-radius: var(--radius-md);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  font-weight: 500;
+  color: var(--color-gray);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+}
+
+.locationWrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: var(--color-inputs);
+  border-radius: 10px;
+  padding: 18px 16px 18px 46px;
+}
+
+.locationIcon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  color: var(--color-main);
+  stroke-width: 2;
+}
+
+.locationInput {
+  flex: 1;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--color-main);
+}
+
+.locationInput::placeholder {
+  color: var(--color-gray);
+}
+
+.heading {
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  font-weight: 500;
+  color: var(--color-gray);
+  margin: 0;
+}
+
+.group {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid var(--color-gray-light);
+  padding-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.groupLabel {
+  font-weight: 600;
+  font-size: var(--fs-h3);
+  line-height: var(--lh-h3);
+  color: var(--color-main);
+}
+
+.chipList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.chip {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-width: 100px;
+  padding: 16px 18px;
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-light);
+  border-radius: 10px;
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--color-main);
+  transition: border-color 150ms ease, background 150ms ease;
+}
+
+.chip svg {
+  width: 32px;
+  height: 32px;
+  color: var(--color-main);
+}
+
+.chip:hover {
+  border-color: var(--color-button);
+}
+
+.chipActive {
+  border-color: var(--color-button);
+  background: var(--color-inputs);
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.searchBtn {
+  padding: 16px 60px;
+  border-radius: 200px;
+  background: var(--color-button);
+  color: var(--color-white);
+  font-weight: 500;
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  letter-spacing: var(--ls-button);
+  transition: background 150ms ease;
+}
+
+.searchBtn:hover {
+  background: var(--color-button-hover);
+}
+
+.clearBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px 40px;
+  border-radius: 200px;
+  background: var(--color-white);
+  color: var(--color-main);
+  border: 1px solid var(--color-gray-light);
+  font-weight: 500;
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  transition: border-color 150ms ease;
+}
+
+.clearBtn:hover {
+  border-color: var(--color-button);
+}
+
+.clearBtn svg {
+  width: 20px;
+  height: 20px;
+}
