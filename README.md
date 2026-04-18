@@ -32,13 +32,17 @@ Prerequisites: Node.js 20+ and npm.
 
 # Install dependencies
 
+````bash
+
 npm install
 
 # Configure environment
+```bash
 
 cp .env.example .env.local
 
 # Start the dev server
+```bash
 
 npm run dev
 
@@ -74,3 +78,4 @@ Endpoints used:
 ## Author
 
 Created by Tetiana Kovpak
+````
