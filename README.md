@@ -5,77 +5,65 @@ A modern web application for browsing and booking camper rentals. Built with Nex
 ## Features
 
 - **Home** (`/`) — hero banner with a call to action leading to the catalog.
-- **Catalog** (`/catalog`) — backend-filtered list of campers with URL-driven
-  filters (location, vehicle type, engine, transmission) and "Load more"
-  pagination powered by TanStack Query's `useInfiniteQuery`.
-- **Camper detail** (`/catalog/[camperId]`) — opens in a new tab from the
-  catalog cards. Shows a Swiper thumbs gallery, vehicle specs, amenities,
-  user reviews, and a booking form with client-side validation and
-  success/error toast notifications.
+- **Catalog** (`/catalog`) — backend-filtered list of campers with URL-driven filters (location, vehicle type, engine, transmission) and "Load more" pagination powered by TanStack Query's `useInfiniteQuery`.
+- **Camper detail** (`/catalog/[camperId]`) — opens in a new tab from the catalog cards. Shows a Swiper thumbs gallery, vehicle specs, amenities, user reviews, and a booking form with client-side validation and success/error toast notifications.
 
-## Tech stack
+## Tech Stack
 
-- [Next.js 15] (App Router, React Server Components)
-- [TypeScript]
-- [TanStack Query v5] — infinite queries + server-side prefetch / hydration
-- [axios] — HTTP client
-- [react-hook-form]
-  [yup] — booking form state & validation
-- [swiper] — image gallery with thumbnails
-- [react-hot-toast] — notifications
-- [react-icons] — icon set
-- CSS Modules — scoped styling, no framework
+| Tool                                                                                    | Purpose                                           |
+| --------------------------------------------------------------------------------------- | ------------------------------------------------- |
+| [Next.js 15](https://nextjs.org/)                                                       | App Router, React Server Components               |
+| [TypeScript](https://www.typescriptlang.org/)                                           | Type safety                                       |
+| [TanStack Query v5](https://tanstack.com/query/latest)                                  | Infinite queries + server-side prefetch/hydration |
+| [Axios](https://axios-http.com/)                                                        | HTTP client                                       |
+| [React Hook Form](https://react-hook-form.com/) + [Yup](https://github.com/jquense/yup) | Booking form state & validation                   |
+| [Swiper](https://swiperjs.com/)                                                         | Image gallery with thumbnails                     |
+| [React Hot Toast](https://react-hot-toast.com/)                                         | Notifications                                     |
+| [React Icons](https://react-icons.github.io/react-icons/)                               | Icon set                                          |
+| CSS Modules                                                                             | Scoped styling, no framework                      |
 
-## Getting started
+## Getting Started
 
-Prerequisites: Node.js 20+ and npm.
+**Prerequisites:** Node.js 20+ and npm.
 
+```bash
 # Install dependencies
-
-````bash
-
 npm install
 
 # Configure environment
-```bash
-
 cp .env.example .env.local
 
 # Start the dev server
-```bash
-
 npm run dev
+```
 
-Open http://localhost:3000.
+Open [http://localhost:3000](http://localhost:3000).
 
-## Environment variables
+## Environment Variables
 
+```env
 NEXT_PUBLIC_API_BASE_URL=https://campers-api.goit.study
+```
 
 ## Deploying to Vercel
 
 1. Push the repo to GitHub.
-2. Import the project at [vercel.com/new](https://vercel.com/new). Next.js is
-   detected automatically; no build override is needed.
-3. In **Project Settings → Environment Variables**, add
-   `NEXT_PUBLIC_API_BASE_URL=https://campers-api.goit.study` for
-   _Production_, _Preview_, and _Development_.
-4. Deploy. Once you have the production URL, update `metadataBase` in
-   `app/layout.tsx` so Open Graph URLs resolve correctly.
+2. Import the project at [vercel.com/new](https://vercel.com/new). Next.js is detected automatically — no build override needed.
+3. In **Project Settings → Environment Variables**, add `NEXT_PUBLIC_API_BASE_URL=https://campers-api.goit.study` for _Production_, _Preview_, and _Development_.
+4. Deploy. Once you have the production URL, update `metadataBase` in `app/layout.tsx` so Open Graph URLs resolve correctly.
 
-## API reference
+## API Reference
 
-All backend traffic goes to `https://campers-api.goit.study`. Swagger docs:
-https://campers-api.goit.study/docs.
+All backend traffic goes to `https://campers-api.goit.study`.  
+Swagger docs: [https://campers-api.goit.study/docs](https://campers-api.goit.study/docs)
 
-Endpoints used:
-
-- `GET /campers?page=&perPage=&location=&form=&transmission=&engine=` — list
-- `GET /campers/{camperId}` — detail
-- `GET /campers/{camperId}/reviews` — reviews
-- `POST /campers/{camperId}/booking-requests` — create booking
+| Method | Endpoint                                                        | Description    |
+| ------ | --------------------------------------------------------------- | -------------- |
+| `GET`  | `/campers?page=&perPage=&location=&form=&transmission=&engine=` | List campers   |
+| `GET`  | `/campers/{camperId}`                                           | Camper detail  |
+| `GET`  | `/campers/{camperId}/reviews`                                   | Camper reviews |
+| `POST` | `/campers/{camperId}/booking-requests`                          | Create booking |
 
 ## Author
 
-Created by Tetiana Kovpak
-````
+Created by **Tetiana Kovpak**
