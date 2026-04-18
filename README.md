@@ -1,7 +1,6 @@
 # TravelTrucks
 
-Frontend for a campervan rental service. Built with Next.js App Router and
-TypeScript, consuming the public `campers-api.goit.study` backend.
+A modern web application for browsing and booking camper rentals. Built with Next.js App Router and TypeScript, consuming the public `campers-api.goit.study` backend.
 
 ## Features
 
@@ -16,82 +15,38 @@ TypeScript, consuming the public `campers-api.goit.study` backend.
 
 ## Tech stack
 
-- [Next.js 15](https://nextjs.org/) (App Router, React Server Components)
-- [TypeScript](https://www.typescriptlang.org/)
-- [TanStack Query v5](https://tanstack.com/query) — infinite queries +
-  server-side prefetch / hydration
-- [axios](https://axios-http.com/) — HTTP client
-- [react-hook-form](https://react-hook-form.com/) +
-  [yup](https://github.com/jquense/yup) — booking form state & validation
-- [swiper](https://swiperjs.com/) — image gallery with thumbnails
-- [react-hot-toast](https://react-hot-toast.com/) — notifications
-- [react-icons](https://react-icons.github.io/react-icons/) — icon set
+- [Next.js 15] (App Router, React Server Components)
+- [TypeScript]
+- [TanStack Query v5] — infinite queries + server-side prefetch / hydration
+- [axios] — HTTP client
+- [react-hook-form]
+  [yup] — booking form state & validation
+- [swiper] — image gallery with thumbnails
+- [react-hot-toast] — notifications
+- [react-icons] — icon set
 - CSS Modules — scoped styling, no framework
-
-## Project structure
-
-```
-app/                  # App Router routes
-  layout.tsx          # root layout, fonts, Providers, Toaster
-  page.tsx            # Home
-  providers.tsx       # QueryClientProvider
-  catalog/
-    page.tsx          # Catalog shell (RSC) with server prefetch
-    CatalogView.tsx   # client view using useInfiniteQuery
-    [camperId]/
-      page.tsx        # Detail (RSC) + generateMetadata
-components/           # UI components (each with its CSS module)
-hooks/                # useFilterForm, useCampersInfinite
-lib/
-  api/                # axios client + campers endpoints
-  filters/            # filter schema + URL serialization
-  format/             # helpers (price formatting)
-  query/              # query keys + per-request QueryClient
-styles/               # shared tokens
-types/                # shared TypeScript types
-public/               # static assets
-```
 
 ## Getting started
 
 Prerequisites: Node.js 20+ and npm.
 
-```bash
-# Clone
-git clone <repo-url>
-cd TravelTrucks
-
 # Install dependencies
+
 npm install
 
 # Configure environment
+
 cp .env.example .env.local
-# (edit .env.local if you want to point at a different backend)
 
 # Start the dev server
+
 npm run dev
-```
 
 Open http://localhost:3000.
 
 ## Environment variables
 
-| Name | Required | Default (in `.env.example`) |
-| --- | --- | --- |
-| `NEXT_PUBLIC_API_BASE_URL` | yes | `https://campers-api.goit.study` |
-
-`NEXT_PUBLIC_API_BASE_URL` is read by `lib/api/client.ts`. The app throws at
-startup if it's not set.
-
-## Scripts
-
-```bash
-npm run dev        # local dev server with HMR
-npm run build      # production build
-npm run start      # run the built app
-npm run lint       # ESLint
-npm run typecheck  # tsc --noEmit
-```
+NEXT_PUBLIC_API_BASE_URL=https://campers-api.goit.study
 
 ## Deploying to Vercel
 
@@ -118,4 +73,4 @@ Endpoints used:
 
 ## Author
 
-Created by Tetiana as part of the Go-IT frontend course.
+Created by Tetiana Kovpak
