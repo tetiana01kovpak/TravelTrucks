@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import clsx from 'clsx';
+import Logo from '@/components/Logo/Logo';
 import styles from './Header.module.css';
 
 const navLinks = [
@@ -21,10 +22,7 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.inner}>
-        <Link href="/" className={styles.logo} aria-label="TravelTrucks home">
-          <span className={styles.logoMain}>Travel</span>
-          <span className={styles.logoAccent}>Trucks</span>
-        </Link>
+        <Logo />
         <nav aria-label="Primary">
           <ul className={styles.nav}>
             {navLinks.map(({ href, label }) => (

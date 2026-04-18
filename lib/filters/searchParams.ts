@@ -37,21 +37,3 @@ export function parseFilters(
 
   return result;
 }
-
-export function serializeFilters(filters: FilterValues): string {
-  const params = new URLSearchParams();
-  if (filters.location) params.set('location', filters.location);
-  if (filters.form) params.set('form', filters.form);
-  if (filters.engine) params.set('engine', filters.engine);
-  if (filters.transmission) params.set('transmission', filters.transmission);
-  return params.toString();
-}
-
-export function filtersEqual(a: FilterValues, b: FilterValues): boolean {
-  return (
-    (a.location ?? '') === (b.location ?? '') &&
-    (a.form ?? '') === (b.form ?? '') &&
-    (a.engine ?? '') === (b.engine ?? '') &&
-    (a.transmission ?? '') === (b.transmission ?? '')
-  );
-}

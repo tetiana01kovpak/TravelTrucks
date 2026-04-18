@@ -1,0 +1,11 @@
+.root {
+  display: inline-flex;
+  align-items: center;
+  height: 16px;
+}
+
+.svg {
+  display: block;
+  height: 16px;
+  width: auto;
+}

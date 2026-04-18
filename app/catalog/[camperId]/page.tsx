@@ -66,31 +66,32 @@ export default async function CamperDetailPage({ params }: DetailPageProps) {
   return (
     <article className={styles.article}>
       <section className={styles.top}>
-        <div className={styles.head}>
-          <h1 className={styles.title}>{camper.name}</h1>
-          <RatingInline
-            rating={camper.rating}
-            totalReviews={camper.totalReviews}
-            location={camper.location}
-          />
-          <p className={styles.price}>{formatPrice(camper.price)}</p>
-        </div>
-
-        <div className={styles.gallery}>
+        <div className={styles.galleryCol}>
           <Gallery gallery={camper.gallery} alt={camper.name} />
         </div>
 
-        {camper.description && (
-          <p className={styles.description}>{camper.description}</p>
-        )}
-      </section>
+        <div className={styles.infoCol}>
+          <div className={styles.card}>
+            <header className={styles.head}>
+              <h1 className={styles.title}>{camper.name}</h1>
+              <RatingInline
+                rating={camper.rating}
+                totalReviews={camper.totalReviews}
+                location={camper.location}
+              />
+              <p className={styles.price}>{formatPrice(camper.price)}</p>
+            </header>
+            {camper.description && (
+              <p className={styles.description}>{camper.description}</p>
+            )}
+          </div>
 
-      <section className={styles.detailsSection}>
-        <div className={styles.detailsBlock}>
-          <h2 className={styles.blockTitle}>Vehicle details</h2>
-          <FeatureBadges camper={camper} />
-          <div className={styles.spec}>
-            <SpecTable camper={camper} />
+          <div className={styles.card}>
+            <h2 className={styles.blockTitle}>Vehicle details</h2>
+            <FeatureBadges camper={camper} showIcons={false} />
+            <div className={styles.spec}>
+              <SpecTable camper={camper} />
+            </div>
           </div>
         </div>
       </section>

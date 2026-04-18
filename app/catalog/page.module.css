@@ -3,23 +3,6 @@
   background: var(--color-white);
 }
 
-.inner {
-  max-width: var(--container-max);
-  margin: 0 auto;
-  padding: 0 64px;
-  display: flex;
-  gap: 64px;
-  align-items: flex-start;
-}
-
-.results {
-  flex: 1;
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
 .suspense {
   display: flex;
   justify-content: center;

@@ -13,8 +13,6 @@ import styles from './BookingForm.module.css';
 type BookingFormValues = {
   name: string;
   email: string;
-  bookingDate?: string;
-  comment?: string;
 };
 
 const schema: yup.ObjectSchema<BookingFormValues> = yup.object({
@@ -24,8 +22,6 @@ const schema: yup.ObjectSchema<BookingFormValues> = yup.object({
     .trim()
     .email('Please enter a valid email')
     .required('Email is required'),
-  bookingDate: yup.string().optional(),
-  comment: yup.string().optional(),
 });
 
 type BookingFormProps = {
@@ -41,7 +37,7 @@ export default function BookingForm({ camperId, camperName }: BookingFormProps) 
     formState: { errors, isSubmitting },
   } = useForm<BookingFormValues>({
     resolver: yupResolver(schema),
-    defaultValues: { name: '', email: '', bookingDate: '', comment: '' },
+    defaultValues: { name: '', email: '' },
   });
 
   const mutation = useMutation({
@@ -111,32 +107,6 @@ export default function BookingForm({ camperId, camperName }: BookingFormProps) 
               {errors.email.message}
             </p>
           )}
-        </div>
-
-        <div className={styles.field}>
-          <label htmlFor="booking-date" className={styles.srOnly}>
-            Booking date
-          </label>
-          <input
-            id="booking-date"
-            type="date"
-            placeholder="Booking date"
-            className={styles.input}
-            {...register('bookingDate')}
-          />
-        </div>
-
-        <div className={styles.field}>
-          <label htmlFor="booking-comment" className={styles.srOnly}>
-            Comment
-          </label>
-          <textarea
-            id="booking-comment"
-            rows={4}
-            placeholder="Comment"
-            className={styles.textarea}
-            {...register('comment')}
-          />
         </div>
 
         <button type="submit" className={styles.submit} disabled={pending}>

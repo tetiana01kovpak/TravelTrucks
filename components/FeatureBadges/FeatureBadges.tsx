@@ -64,6 +64,7 @@ type FeatureBadgesProps = {
   amenities?: CamperAmenity[];
   max?: number;
   className?: string;
+  showIcons?: boolean;
 };
 
 export default function FeatureBadges({
@@ -71,6 +72,7 @@ export default function FeatureBadges({
   amenities,
   max,
   className,
+  showIcons = true,
 }: FeatureBadgesProps) {
   const list: Badge[] = [];
 
@@ -108,7 +110,7 @@ export default function FeatureBadges({
     <ul className={[styles.row, className].filter(Boolean).join(' ')}>
       {visible.map((badge) => (
         <li key={badge.key} className={styles.badge}>
-          <span className={styles.icon}>{badge.node}</span>
+          {showIcons && <span className={styles.icon}>{badge.node}</span>}
           <span>{badge.label}</span>
         </li>
       ))}

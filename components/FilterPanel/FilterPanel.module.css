@@ -1,4 +1,4 @@
-.panel {
+.form {
   width: 360px;
   flex-shrink: 0;
   display: flex;
@@ -16,7 +16,7 @@
   gap: 8px;
 }
 
-.label {
+.fieldLabel {
   font-weight: 500;
   color: var(--color-gray);
   font-size: var(--fs-body);
@@ -81,47 +81,58 @@
   font-size: var(--fs-h3);
   line-height: var(--lh-h3);
   color: var(--color-main);
+  padding: 0;
 }
 
-.chipList {
+.optionList {
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+  flex-direction: column;
+  gap: 12px;
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.chip {
-  display: inline-flex;
-  flex-direction: column;
+.optionItem {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 6px;
-  min-width: 100px;
-  padding: 16px 18px;
-  background: var(--color-white);
-  border: 1px solid var(--color-gray-light);
-  border-radius: 10px;
+  gap: 12px;
+}
+
+.radio {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 24px;
+  height: 24px;
+  margin: 0;
+  border: 1px solid var(--color-gray);
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+  transition: border-color 150ms ease;
+}
+
+.radio:hover {
+  border-color: var(--color-main);
+}
+
+.radio:checked {
+  border-color: var(--color-main);
+}
+
+.radio:checked::before {
+  content: '';
+  position: absolute;
+  inset: 5px;
+  background: var(--color-main);
+  border-radius: 50%;
+}
+
+.optionLabel {
   font-size: var(--fs-body);
   line-height: var(--lh-body);
   color: var(--color-main);
-  transition: border-color 150ms ease, background 150ms ease;
-}
-
-.chip svg {
-  width: 32px;
-  height: 32px;
-  color: var(--color-main);
-}
-
-.chip:hover {
-  border-color: var(--color-button);
-}
-
-.chipActive {
-  border-color: var(--color-button);
-  background: var(--color-inputs);
+  cursor: pointer;
 }
 
 .actions {
