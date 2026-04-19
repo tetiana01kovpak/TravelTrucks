@@ -3,20 +3,21 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 16px 60px;
+  padding: 16px 32px;
   border-radius: 200px;
-  border: 1px solid var(--color-gray-light);
-  background: var(--color-white);
-  color: var(--color-main);
+  border: 1px solid #dadde1;
+  background: #ffffff;
+  color: #101828;
   font-weight: 500;
-  font-size: var(--fs-body);
-  line-height: var(--lh-body);
-  transition: border-color 150ms ease, color 150ms ease;
+  font-size: 16px;
+  line-height: 24px;
+  transition:
+    border-color 150ms ease,
+    color 150ms ease;
 }
 
 .button:hover:not(:disabled) {
-  border-color: var(--color-button);
-  color: var(--color-button);
+  border-color: #6d7b75;
 }
 
 .button:disabled {

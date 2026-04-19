@@ -1,23 +1,23 @@
 export type CamperForm =
-  | 'alcove'
-  | 'panel_van'
-  | 'integrated'
-  | 'semi_integrated';
+  | "alcove"
+  | "panel_van"
+  | "integrated"
+  | "semi_integrated";
 
-export type CamperTransmission = 'automatic' | 'manual';
+export type CamperTransmission = "automatic" | "manual";
 
-export type CamperEngine = 'diesel' | 'petrol' | 'hybrid' | 'electric';
+export type CamperEngine = "diesel" | "petrol" | "hybrid" | "electric";
 
 export type CamperAmenity =
-  | 'ac'
-  | 'bathroom'
-  | 'kitchen'
-  | 'tv'
-  | 'radio'
-  | 'refrigerator'
-  | 'microwave'
-  | 'gas'
-  | 'water';
+  | "ac"
+  | "bathroom"
+  | "kitchen"
+  | "tv"
+  | "radio"
+  | "refrigerator"
+  | "microwave"
+  | "gas"
+  | "water";
 
 export type Camper = {
   id: string;

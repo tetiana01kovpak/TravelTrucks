@@ -1,9 +1,9 @@
-import Link from 'next/link';
-import type { Camper } from '@/types/camper';
-import RatingInline from '@/components/RatingInline/RatingInline';
-import FeatureBadges from '@/components/FeatureBadges/FeatureBadges';
-import { formatPrice } from '@/lib/format/price';
-import styles from './CamperCard.module.css';
+import Link from "next/link";
+import type { Camper } from "@/types/camper";
+import RatingInline from "@/components/RatingInline/RatingInline";
+import FeatureBadges from "@/components/FeatureBadges/FeatureBadges";
+import { formatPrice } from "@/lib/format/price";
+import styles from "./CamperCard.module.css";
 
 type CamperCardProps = {
   camper: Camper;
@@ -23,20 +23,20 @@ export default function CamperCard({ camper }: CamperCardProps) {
         />
       </div>
       <div className={styles.content}>
-        <header className={styles.header}>
-          <h2 className={styles.title}>{camper.name}</h2>
-          <span className={styles.price}>{formatPrice(camper.price)}</span>
-        </header>
+        <div className={styles.textContainer}>
+          <header className={styles.header}>
+            <h2 className={styles.title}>{camper.name}</h2>
+            <span className={styles.price}>{formatPrice(camper.price)}</span>
+          </header>
 
-        <RatingInline
-          rating={camper.rating}
-          totalReviews={camper.totalReviews}
-          location={camper.location}
-        />
+          <RatingInline
+            rating={camper.rating}
+            totalReviews={camper.totalReviews}
+            location={camper.location}
+          />
+        </div>
 
-        {description && (
-          <p className={styles.description}>{description}</p>
-        )}
+        {description && <p className={styles.description}>{description}</p>}
 
         <FeatureBadges camper={camper} max={6} className={styles.badges} />
 

@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import CamperCard from '@/components/CamperCard/CamperCard';
-import FilterPanel from '@/components/FilterPanel/FilterPanel';
-import Loader from '@/components/Loader/Loader';
-import LoadMoreButton from '@/components/LoadMoreButton/LoadMoreButton';
-import { useCampersInfinite } from '@/hooks/useCampersInfinite';
-import type { FilterValues } from '@/types/camper';
-import styles from './CatalogView.module.css';
+import { useState } from "react";
+import CamperCard from "@/components/CamperCard/CamperCard";
+import FilterPanel from "@/components/FilterPanel/FilterPanel";
+import Loader from "@/components/Loader/Loader";
+import LoadMoreButton from "@/components/LoadMoreButton/LoadMoreButton";
+import { useCampersInfinite } from "@/hooks/useCampersInfinite";
+import type { FilterValues } from "@/types/camper";
+import styles from "./CatalogView.module.css";
 
 type CatalogViewProps = {
   initialFilters: FilterValues;
@@ -42,8 +42,8 @@ export default function CatalogView({ initialFilters }: CatalogViewProps) {
         ) : isError ? (
           <div className={styles.state}>
             <p className={styles.errorMsg}>
-              Couldn’t load campers:{' '}
-              {(error as Error)?.message || 'Unknown error'}.
+              Couldn’t load campers:{" "}
+              {(error as Error)?.message || "Unknown error"}.
             </p>
             <button
               type="button"

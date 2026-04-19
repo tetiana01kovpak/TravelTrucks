@@ -5,13 +5,13 @@
 }
 
 .filled {
-  color: var(--color-rating);
+  color: #ffc531;
   width: 16px;
   height: 16px;
 }
 
 .empty {
-  color: var(--color-gray-light);
+  color: #dadde1;
   width: 16px;
   height: 16px;
 }

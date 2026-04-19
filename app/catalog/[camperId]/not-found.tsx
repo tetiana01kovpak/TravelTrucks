@@ -1,5 +1,5 @@
-import Link from 'next/link';
-import styles from '../../error.module.css';
+import Link from "next/link";
+import styles from "../../error.module.css";
 
 export default function CamperNotFound() {
   return (

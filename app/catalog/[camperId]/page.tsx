@@ -1,16 +1,16 @@
-import type { Metadata } from 'next';
-import { notFound } from 'next/navigation';
-import axios from 'axios';
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
+import axios from "axios";
 
-import Gallery from '@/components/Gallery/Gallery';
-import RatingInline from '@/components/RatingInline/RatingInline';
-import FeatureBadges from '@/components/FeatureBadges/FeatureBadges';
-import SpecTable from '@/components/SpecTable/SpecTable';
-import ReviewsList from '@/components/ReviewsList/ReviewsList';
-import BookingForm from '@/components/BookingForm/BookingForm';
-import { fetchCamperById, fetchCamperReviews } from '@/lib/api/campers';
-import { formatPrice } from '@/lib/format/price';
-import styles from './page.module.css';
+import Gallery from "@/components/Gallery/Gallery";
+import RatingInline from "@/components/RatingInline/RatingInline";
+import FeatureBadges from "@/components/FeatureBadges/FeatureBadges";
+import SpecTable from "@/components/SpecTable/SpecTable";
+import ReviewsList from "@/components/ReviewsList/ReviewsList";
+import BookingForm from "@/components/BookingForm/BookingForm";
+import { fetchCamperById, fetchCamperReviews } from "@/lib/api/campers";
+import { formatPrice } from "@/lib/format/price";
+import styles from "./page.module.css";
 
 type DetailPageProps = {
   params: Promise<{ camperId: string }>;
@@ -28,7 +28,7 @@ export async function generateMetadata({
     const camper = await fetchCamperById(camperId);
     const description = camper.description
       ? camper.description.slice(0, 160)
-      : `Rent ${camper.name} — ${camper.form.replace('_', ' ')} camper in ${camper.location}.`;
+      : `Rent ${camper.name} — ${camper.form.replace("_", " ")} camper in ${camper.location}.`;
 
     return {
       title: camper.name,
@@ -44,7 +44,7 @@ export async function generateMetadata({
       },
     };
   } catch {
-    return { title: 'Camper not found' };
+    return { title: "Camper not found" };
   }
 }
 
@@ -74,12 +74,14 @@ export default async function CamperDetailPage({ params }: DetailPageProps) {
           <div className={styles.card}>
             <header className={styles.head}>
               <h1 className={styles.title}>{camper.name}</h1>
-              <RatingInline
-                rating={camper.rating}
-                totalReviews={camper.totalReviews}
-                location={camper.location}
-              />
-              <p className={styles.price}>{formatPrice(camper.price)}</p>
+              <div className={styles.details}>
+                <RatingInline
+                  rating={camper.rating}
+                  totalReviews={camper.totalReviews}
+                  location={camper.location}
+                />
+                <p className={styles.price}>{formatPrice(camper.price)}</p>
+              </div>
             </header>
             {camper.description && (
               <p className={styles.description}>{camper.description}</p>
@@ -96,13 +98,15 @@ export default async function CamperDetailPage({ params }: DetailPageProps) {
         </div>
       </section>
 
-      <section className={styles.bottom}>
-        <div className={styles.reviewsBlock}>
-          <h2 className={styles.blockTitle}>Reviews</h2>
-          <ReviewsList reviews={reviews} />
-        </div>
-        <div className={styles.bookingBlock}>
-          <BookingForm camperId={camper.id} camperName={camper.name} />
+      <section className={styles.reviewsSection}>
+        <h2 className={styles.blockTitle}>Reviews</h2>
+        <div className={styles.reviewsRow}>
+          <div className={styles.reviewsBlock}>
+            <ReviewsList reviews={reviews} />
+          </div>
+          <div className={styles.bookingBlock}>
+            <BookingForm camperId={camper.id} camperName={camper.name} />
+          </div>
         </div>
       </section>
     </article>

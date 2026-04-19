@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useEffect } from 'react';
-import styles from './error.module.css';
+import { useEffect } from "react";
+import styles from "./error.module.css";
 
 type ErrorProps = {
   error: Error & { digest?: string };

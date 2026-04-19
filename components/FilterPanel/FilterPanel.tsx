@@ -1,7 +1,8 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { FiMapPin, FiX } from 'react-icons/fi';
+import { useState } from "react";
+import { FiX } from "react-icons/fi";
+import MapIcon from "@/components/icons/MapIcon";
 import {
   ENGINE_LABELS,
   ENGINE_VALUES,
@@ -12,9 +13,9 @@ import {
   isCamperEngine,
   isCamperForm,
   isCamperTransmission,
-} from '@/lib/filters/schema';
-import type { FilterValues } from '@/types/camper';
-import styles from './FilterPanel.module.css';
+} from "@/lib/filters/schema";
+import type { FilterValues } from "@/types/camper";
+import styles from "./FilterPanel.module.css";
 
 type FilterPanelProps = {
   initialValues: FilterValues;
@@ -43,9 +44,9 @@ export default function FilterPanel({
   const handleRadioChange = (name: keyof FilterValues, raw: string) => {
     setValues((prev) => {
       const next = { ...prev };
-      if (name === 'form' && isCamperForm(raw)) next.form = raw;
-      if (name === 'engine' && isCamperEngine(raw)) next.engine = raw;
-      if (name === 'transmission' && isCamperTransmission(raw)) {
+      if (name === "form" && isCamperForm(raw)) next.form = raw;
+      if (name === "engine" && isCamperEngine(raw)) next.engine = raw;
+      if (name === "transmission" && isCamperTransmission(raw)) {
         next.transmission = raw;
       }
       return next;
@@ -54,62 +55,69 @@ export default function FilterPanel({
 
   const hasAnyFilter = Boolean(
     values.location?.trim() ||
-      values.form ||
-      values.engine ||
-      values.transmission
+    values.form ||
+    values.engine ||
+    values.transmission,
   );
 
   return (
     <aside aria-label="Catalog filters">
       <form className={styles.form} onSubmit={handleSubmit}>
-        <div className={styles.field}>
-          <label htmlFor="location" className={styles.fieldLabel}>
-            Location
-          </label>
-          <div className={styles.locationWrap}>
-            <FiMapPin aria-hidden="true" className={styles.locationIcon} />
-            <input
-              id="location"
-              name="location"
-              type="text"
-              className={styles.locationInput}
-              placeholder="City"
-              value={values.location ?? ''}
-              onChange={(event) =>
-                setValues((prev) => ({ ...prev, location: event.target.value }))
-              }
+        <div className={styles.info}>
+          <div className={styles.field}>
+            <label htmlFor="location" className={styles.fieldLabel}>
+              Location
+            </label>
+            <div className={styles.locationWrap}>
+              <MapIcon aria-hidden="true" className={styles.locationIcon} />
+              <input
+                id="location"
+                name="location"
+                type="text"
+                className={styles.locationInput}
+                placeholder="City"
+                value={values.location ?? ""}
+                onChange={(event) =>
+                  setValues((prev) => ({
+                    ...prev,
+                    location: event.target.value,
+                  }))
+                }
+              />
+            </div>
+          </div>
+
+          <div className={styles.filtersBlock}>
+            <h2 className={styles.heading}>Filters</h2>
+
+            <RadioGroup
+              legend="Camper form"
+              name="form"
+              options={FORM_VALUES}
+              labels={FORM_LABELS}
+              selected={values.form}
+              onChange={(v) => handleRadioChange("form", v)}
+            />
+
+            <RadioGroup
+              legend="Engine"
+              name="engine"
+              options={ENGINE_VALUES}
+              labels={ENGINE_LABELS}
+              selected={values.engine}
+              onChange={(v) => handleRadioChange("engine", v)}
+            />
+
+            <RadioGroup
+              legend="Transmission"
+              name="transmission"
+              options={TRANSMISSION_VALUES}
+              labels={TRANSMISSION_LABELS}
+              selected={values.transmission}
+              onChange={(v) => handleRadioChange("transmission", v)}
             />
           </div>
         </div>
-
-        <h2 className={styles.heading}>Filters</h2>
-
-        <RadioGroup
-          legend="Camper form"
-          name="form"
-          options={FORM_VALUES}
-          labels={FORM_LABELS}
-          selected={values.form}
-          onChange={(v) => handleRadioChange('form', v)}
-        />
-
-        <RadioGroup
-          legend="Engine"
-          name="engine"
-          options={ENGINE_VALUES}
-          labels={ENGINE_LABELS}
-          selected={values.engine}
-          onChange={(v) => handleRadioChange('engine', v)}
-        />
-
-        <RadioGroup
-          legend="Transmission"
-          name="transmission"
-          options={TRANSMISSION_VALUES}
-          labels={TRANSMISSION_LABELS}
-          selected={values.transmission}
-          onChange={(v) => handleRadioChange('transmission', v)}
-        />
 
         <div className={styles.actions}>
           <button type="submit" className={styles.searchBtn}>

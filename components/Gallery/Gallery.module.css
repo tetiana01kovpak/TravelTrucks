@@ -1,20 +1,20 @@
 .wrap {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 27px;
   width: 100%;
 }
 
 .main {
   width: 100%;
-  border-radius: 10px;
+  border-radius: 16px;
   overflow: hidden;
-  background: var(--color-inputs);
+  background: #f7f7f7;
 }
 
 .main :global(.swiper-button-prev),
 .main :global(.swiper-button-next) {
-  color: var(--color-white);
+  color: #ffffff;
   background: rgba(16, 24, 40, 0.45);
   width: 40px;
   height: 40px;
@@ -46,18 +46,20 @@
 
 .thumbSlide {
   aspect-ratio: 135 / 144;
-  border-radius: 10px;
+  border-radius: 16px;
   overflow: hidden;
   cursor: pointer;
   opacity: 0.55;
-  transition: opacity 150ms ease, outline-color 150ms ease;
-  outline: 2px solid transparent;
+  transition:
+    opacity 150ms ease,
+    outline-color 150ms ease;
+  outline: 3px solid transparent;
 }
 
 .thumbSlide :global(.swiper-slide-thumb-active),
 .thumbs :global(.swiper-slide-thumb-active) {
   opacity: 1;
-  outline-color: var(--color-button);
+  outline-color: #829b91;
 }
 
 .thumbImage {
@@ -72,7 +74,7 @@
   aspect-ratio: 638 / 504;
   display: grid;
   place-items: center;
-  background: var(--color-inputs);
-  border-radius: 10px;
-  color: var(--color-gray);
+  background: #f7f7f7;
+  border-radius: 16px;
+  color: #6c717b;
 }

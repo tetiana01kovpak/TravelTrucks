@@ -1,5 +1,5 @@
 .wrap {
-  min-height: calc(100vh - var(--header-height));
+  min-height: calc(100vh - 72px);
   display: grid;
   place-items: center;
   padding: 40px 20px;
@@ -15,27 +15,27 @@
 }
 
 .title {
-  font-size: var(--fs-h2);
-  line-height: var(--lh-h2);
+  font-size: 24px;
+  line-height: 32px;
   font-weight: 600;
-  color: var(--color-main);
+  color: #101828;
 }
 
 .text {
-  color: var(--color-text);
+  color: #475467;
 }
 
 .button {
   margin-top: 8px;
   padding: 16px 60px;
-  background: var(--color-button);
-  color: var(--color-white);
+  background: #829b91;
+  color: #ffffff;
   border-radius: 200px;
   font-weight: 500;
-  letter-spacing: var(--ls-button);
+  letter-spacing: -0.005em;
   transition: background 150ms ease;
 }
 
 .button:hover {
-  background: var(--color-button-hover);
+  background: #6d7b75;
 }

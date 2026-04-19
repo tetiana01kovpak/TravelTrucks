@@ -2,10 +2,9 @@
   display: flex;
   gap: 16px;
   align-items: center;
-  flex-wrap: wrap;
-  color: var(--color-main);
-  font-size: var(--fs-body);
-  line-height: var(--lh-body);
+  color: #101828;
+  font-size: 16px;
+  line-height: 24px;
 }
 
 .item {
@@ -17,14 +16,13 @@
 .star {
   width: 16px;
   height: 16px;
-  color: var(--color-rating);
+  color: #ffc531;
 }
 
 .pin {
   width: 16px;
   height: 16px;
-  color: var(--color-main);
-  stroke-width: 2;
+  color: #101828;
 }
 
 .underline {

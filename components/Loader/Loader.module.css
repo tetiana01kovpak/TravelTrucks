@@ -1,8 +1,8 @@
 .spinner {
   display: inline-block;
   border-radius: 50%;
-  border: 3px solid var(--color-gray-light);
-  border-top-color: var(--color-button);
+  border: 3px solid #dadde1;
+  border-top-color: #829b91;
   animation: rotate 750ms linear infinite;
   vertical-align: middle;
 }

@@ -2,18 +2,17 @@
   display: flex;
   gap: 24px;
   padding: 24px;
-  background: var(--color-white);
-  border: 1px solid var(--color-gray-light);
-  border-radius: var(--radius-md);
+  background: #f7f7f7;
+  border-radius: 16px;
 }
 
 .imageWrap {
-  flex: 0 0 292px;
-  width: 292px;
-  height: 320px;
-  border-radius: 10px;
+  flex: 0 0 219px;
+  width: 219px;
+  height: 240px;
+  border-radius: 16px;
   overflow: hidden;
-  background: var(--color-inputs);
+  background: #f7f7f7;
 }
 
 .image {
@@ -27,7 +26,13 @@
   min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 24px;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .header {
@@ -38,25 +43,25 @@
 }
 
 .title {
-  font-size: var(--fs-h2);
-  line-height: var(--lh-h2);
+  font-size: 24px;
+  line-height: 32px;
   font-weight: 600;
-  color: var(--color-main);
+  color: #101828;
   margin: 0;
 }
 
 .price {
-  font-size: var(--fs-h2);
-  line-height: var(--lh-h2);
+  font-size: 24px;
+  line-height: 32px;
   font-weight: 600;
-  color: var(--color-main);
+  color: #101828;
   white-space: nowrap;
 }
 
 .description {
-  color: var(--color-text);
-  font-size: var(--fs-body);
-  line-height: var(--lh-body);
+  color: #475467;
+  font-size: 16px;
+  line-height: 24px;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -70,17 +75,17 @@
 
 .cta {
   align-self: flex-start;
-  padding: 16px 40px;
+  padding: 16px 60px;
   border-radius: 200px;
-  background: var(--color-button);
-  color: var(--color-white);
+  background: #829b91;
+  color: #ffffff;
   font-weight: 500;
-  font-size: var(--fs-body);
-  line-height: var(--lh-body);
-  letter-spacing: var(--ls-button);
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.005em;
   transition: background 150ms ease;
 }
 
 .cta:hover {
-  background: var(--color-button-hover);
+  background: #6d7b75;
 }

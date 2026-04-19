@@ -1,23 +1,20 @@
-import { Suspense } from 'react';
-import type { Metadata } from 'next';
-import {
-  HydrationBoundary,
-  dehydrate,
-} from '@tanstack/react-query';
+import { Suspense } from "react";
+import type { Metadata } from "next";
+import { HydrationBoundary, dehydrate } from "@tanstack/react-query";
 
-import Loader from '@/components/Loader/Loader';
-import { fetchCampers } from '@/lib/api/campers';
-import { parseFilters } from '@/lib/filters/searchParams';
-import { PER_PAGE } from '@/lib/filters/schema';
-import { getQueryClient } from '@/lib/query/getQueryClient';
-import { campersListKey } from '@/lib/query/keys';
-import CatalogView from './CatalogView';
-import styles from './page.module.css';
+import Loader from "@/components/Loader/Loader";
+import { fetchCampers } from "@/lib/api/campers";
+import { parseFilters } from "@/lib/filters/searchParams";
+import { PER_PAGE } from "@/lib/filters/schema";
+import { getQueryClient } from "@/lib/query/getQueryClient";
+import { campersListKey } from "@/lib/query/keys";
+import CatalogView from "./CatalogView";
+import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: 'Catalog',
+  title: "Catalog",
   description:
-    'Browse every camper in the TravelTrucks catalog and filter by location, vehicle type, engine and transmission.',
+    "Browse every camper in the TravelTrucks catalog and filter by location, vehicle type, engine and transmission.",
 };
 
 type CatalogPageProps = {

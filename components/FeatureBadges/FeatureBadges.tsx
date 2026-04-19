@@ -1,4 +1,4 @@
-import type { ReactElement } from 'react';
+import type { ReactElement } from "react";
 import {
   LuBath,
   LuCookingPot,
@@ -8,59 +8,59 @@ import {
   LuRadio,
   LuRefrigerator,
   LuTv,
-  LuFuel,
-  LuMap,
-  LuCog,
   LuWind,
-} from 'react-icons/lu';
-import type { Camper, CamperAmenity } from '@/types/camper';
+} from "react-icons/lu";
+import EngineIcon from "@/components/icons/EngineIcon";
+import FormIcon from "@/components/icons/FormIcon";
+import TransmissionIcon from "@/components/icons/TransmissionIcon";
+import type { Camper, CamperAmenity } from "@/types/camper";
 import {
   ENGINE_LABELS,
   FORM_LABELS,
   TRANSMISSION_LABELS,
-} from '@/lib/filters/schema';
-import styles from './FeatureBadges.module.css';
+} from "@/lib/filters/schema";
+import styles from "./FeatureBadges.module.css";
 
 const amenityMap: Record<
   CamperAmenity,
   { label: string; Icon: () => ReactElement }
 > = {
-  ac: { label: 'AC', Icon: () => <LuWind aria-hidden="true" /> },
-  bathroom: { label: 'Bathroom', Icon: () => <LuBath aria-hidden="true" /> },
-  kitchen: { label: 'Kitchen', Icon: () => <LuCookingPot aria-hidden="true" /> },
-  tv: { label: 'TV', Icon: () => <LuTv aria-hidden="true" /> },
-  radio: { label: 'Radio', Icon: () => <LuRadio aria-hidden="true" /> },
+  ac: { label: "AC", Icon: () => <LuWind aria-hidden="true" /> },
+  bathroom: { label: "Bathroom", Icon: () => <LuBath aria-hidden="true" /> },
+  kitchen: {
+    label: "Kitchen",
+    Icon: () => <LuCookingPot aria-hidden="true" />,
+  },
+  tv: { label: "TV", Icon: () => <LuTv aria-hidden="true" /> },
+  radio: { label: "Radio", Icon: () => <LuRadio aria-hidden="true" /> },
   refrigerator: {
-    label: 'Refrigerator',
+    label: "Refrigerator",
     Icon: () => <LuRefrigerator aria-hidden="true" />,
   },
   microwave: {
-    label: 'Microwave',
+    label: "Microwave",
     Icon: () => <LuMicrowave aria-hidden="true" />,
   },
-  gas: { label: 'Gas', Icon: () => <LuFlame aria-hidden="true" /> },
-  water: { label: 'Water', Icon: () => <LuDroplets aria-hidden="true" /> },
+  gas: { label: "Gas", Icon: () => <LuFlame aria-hidden="true" /> },
+  water: { label: "Water", Icon: () => <LuDroplets aria-hidden="true" /> },
 };
 
 type Badge = { key: string; label: string; node: ReactElement };
 
 function formIcon(): ReactElement {
-  return <LuMap aria-hidden="true" />;
+  return <FormIcon aria-hidden="true" />;
 }
 
 function engineIcon(): ReactElement {
-  return <LuFuel aria-hidden="true" />;
+  return <EngineIcon aria-hidden="true" />;
 }
 
 function transmissionIcon(): ReactElement {
-  return <LuCog aria-hidden="true" />;
+  return <TransmissionIcon aria-hidden="true" />;
 }
 
 type FeatureBadgesProps = {
-  camper: Pick<
-    Camper,
-    'amenities' | 'form' | 'engine' | 'transmission'
-  >;
+  camper: Pick<Camper, "amenities" | "form" | "engine" | "transmission">;
   amenities?: CamperAmenity[];
   max?: number;
   className?: string;
@@ -77,17 +77,17 @@ export default function FeatureBadges({
   const list: Badge[] = [];
 
   list.push({
-    key: 'transmission',
+    key: "transmission",
     label: TRANSMISSION_LABELS[camper.transmission],
     node: transmissionIcon(),
   });
   list.push({
-    key: 'engine',
+    key: "engine",
     label: ENGINE_LABELS[camper.engine],
     node: engineIcon(),
   });
   list.push({
-    key: 'form',
+    key: "form",
     label: FORM_LABELS[camper.form],
     node: formIcon(),
   });
@@ -104,10 +104,10 @@ export default function FeatureBadges({
     });
   }
 
-  const visible = typeof max === 'number' ? list.slice(0, max) : list;
+  const visible = typeof max === "number" ? list.slice(0, max) : list;
 
   return (
-    <ul className={[styles.row, className].filter(Boolean).join(' ')}>
+    <ul className={[styles.badgesRow, className].filter(Boolean).join(" ")}>
       {visible.map((badge) => (
         <li key={badge.key} className={styles.badge}>
           {showIcons && <span className={styles.icon}>{badge.node}</span>}

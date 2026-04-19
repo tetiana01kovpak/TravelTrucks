@@ -1,18 +1,18 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import clsx from 'clsx';
-import Logo from '@/components/Logo/Logo';
-import styles from './Header.module.css';
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import clsx from "clsx";
+import Logo from "@/components/Logo/Logo";
+import styles from "./Header.module.css";
 
 const navLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/catalog', label: 'Catalog' },
+  { href: "/", label: "Home" },
+  { href: "/catalog", label: "Catalog" },
 ];
 
 function isActive(pathname: string, href: string): boolean {
-  if (href === '/') return pathname === '/';
+  if (href === "/") return pathname === "/";
   return pathname === href || pathname.startsWith(`${href}/`);
 }
 
@@ -31,7 +31,7 @@ export default function Header() {
                   href={href}
                   className={clsx(
                     styles.link,
-                    isActive(pathname, href) && styles.linkActive
+                    isActive(pathname, href) && styles.linkActive,
                   )}
                 >
                   {label}

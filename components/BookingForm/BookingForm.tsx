@@ -1,14 +1,14 @@
-'use client';
+"use client";
 
-import { useForm, type SubmitHandler } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
-import { useMutation } from '@tanstack/react-query';
-import toast from 'react-hot-toast';
-import * as yup from 'yup';
+import { useForm, type SubmitHandler } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { useMutation } from "@tanstack/react-query";
+import toast from "react-hot-toast";
+import * as yup from "yup";
 
-import { postBooking } from '@/lib/api/campers';
-import Loader from '@/components/Loader/Loader';
-import styles from './BookingForm.module.css';
+import { postBooking } from "@/lib/api/campers";
+import Loader from "@/components/Loader/Loader";
+import styles from "./BookingForm.module.css";
 
 type BookingFormValues = {
   name: string;
@@ -16,12 +16,16 @@ type BookingFormValues = {
 };
 
 const schema: yup.ObjectSchema<BookingFormValues> = yup.object({
-  name: yup.string().trim().min(2, 'Please enter your name').required('Name is required'),
+  name: yup
+    .string()
+    .trim()
+    .min(2, "Please enter your name")
+    .required("Name is required"),
   email: yup
     .string()
     .trim()
-    .email('Please enter a valid email')
-    .required('Email is required'),
+    .email("Please enter a valid email")
+    .required("Email is required"),
 });
 
 type BookingFormProps = {
@@ -29,7 +33,10 @@ type BookingFormProps = {
   camperName: string;
 };
 
-export default function BookingForm({ camperId, camperName }: BookingFormProps) {
+export default function BookingForm({
+  camperId,
+  camperName,
+}: BookingFormProps) {
   const {
     register,
     handleSubmit,
@@ -37,18 +44,21 @@ export default function BookingForm({ camperId, camperName }: BookingFormProps) 
     formState: { errors, isSubmitting },
   } = useForm<BookingFormValues>({
     resolver: yupResolver(schema),
-    defaultValues: { name: '', email: '' },
+    defaultValues: { name: "", email: "" },
   });
 
   const mutation = useMutation({
     mutationFn: (values: BookingFormValues) =>
-      postBooking(camperId, { name: values.name.trim(), email: values.email.trim() }),
+      postBooking(camperId, {
+        name: values.name.trim(),
+        email: values.email.trim(),
+      }),
     onSuccess: () => {
       toast.success(`Booking request sent for ${camperName}!`);
       reset();
     },
     onError: (error: Error) => {
-      toast.error(error.message || 'Could not send booking. Please try again.');
+      toast.error(error.message || "Could not send booking. Please try again.");
     },
   });
 
@@ -68,7 +78,11 @@ export default function BookingForm({ camperId, camperName }: BookingFormProps) 
           Stay connected! We are always ready to help you.
         </p>
       </header>
-      <form className={styles.form} onSubmit={handleSubmit(onSubmit)} noValidate>
+      <form
+        className={styles.form}
+        onSubmit={handleSubmit(onSubmit)}
+        noValidate
+      >
         <div className={styles.field}>
           <label htmlFor="booking-name" className={styles.srOnly}>
             Name
@@ -80,7 +94,7 @@ export default function BookingForm({ camperId, camperName }: BookingFormProps) 
             autoComplete="name"
             aria-invalid={Boolean(errors.name)}
             className={styles.input}
-            {...register('name')}
+            {...register("name")}
           />
           {errors.name && (
             <p className={styles.error} role="alert">
@@ -100,7 +114,7 @@ export default function BookingForm({ camperId, camperName }: BookingFormProps) 
             autoComplete="email"
             aria-invalid={Boolean(errors.email)}
             className={styles.input}
-            {...register('email')}
+            {...register("email")}
           />
           {errors.email && (
             <p className={styles.error} role="alert">
@@ -116,7 +130,7 @@ export default function BookingForm({ camperId, camperName }: BookingFormProps) 
               <span>Sending…</span>
             </>
           ) : (
-            'Send'
+            "Send"
           )}
         </button>
       </form>

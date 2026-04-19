@@ -1,16 +1,16 @@
-import clsx from 'clsx';
-import styles from './Loader.module.css';
+import clsx from "clsx";
+import styles from "./Loader.module.css";
 
 type LoaderProps = {
-  size?: 'sm' | 'md' | 'lg';
+  size?: "sm" | "md" | "lg";
   overlay?: boolean;
   label?: string;
 };
 
 export default function Loader({
-  size = 'md',
+  size = "md",
   overlay = false,
-  label = 'Loading',
+  label = "Loading",
 }: LoaderProps) {
   const spinner = (
     <span

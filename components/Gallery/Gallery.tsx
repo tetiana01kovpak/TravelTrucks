@@ -1,16 +1,16 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
-import type { Swiper as SwiperType } from 'swiper';
-import type { GalleryImage } from '@/types/camper';
+import { useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { FreeMode, Navigation, Thumbs } from "swiper/modules";
+import type { Swiper as SwiperType } from "swiper";
+import type { GalleryImage } from "@/types/camper";
 
-import 'swiper/css';
-import 'swiper/css/free-mode';
-import 'swiper/css/navigation';
-import 'swiper/css/thumbs';
-import styles from './Gallery.module.css';
+import "swiper/css";
+import "swiper/css/free-mode";
+import "swiper/css/navigation";
+import "swiper/css/thumbs";
+import styles from "./Gallery.module.css";
 
 type GalleryProps = {
   gallery: GalleryImage[];
@@ -39,7 +39,10 @@ export default function Gallery({ gallery, alt }: GalleryProps) {
         loop={images.length > 1}
         spaceBetween={16}
         className={styles.main}
-        a11y={{ prevSlideMessage: 'Previous image', nextSlideMessage: 'Next image' }}
+        a11y={{
+          prevSlideMessage: "Previous image",
+          nextSlideMessage: "Next image",
+        }}
       >
         {images.map((image) => (
           <SwiperSlide key={image.id} className={styles.slide}>
@@ -61,11 +64,14 @@ export default function Gallery({ gallery, alt }: GalleryProps) {
           freeMode
           watchSlidesProgress
           slidesPerView={4}
-          spaceBetween={16}
+          spaceBetween={32}
           className={styles.thumbs}
         >
           {images.map((image) => (
-            <SwiperSlide key={`thumb-${image.id}`} className={styles.thumbSlide}>
+            <SwiperSlide
+              key={`thumb-${image.id}`}
+              className={styles.thumbSlide}
+            >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={image.thumb}

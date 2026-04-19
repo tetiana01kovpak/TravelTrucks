@@ -1,5 +1,5 @@
-import { FaStar } from 'react-icons/fa';
-import styles from './StarRating.module.css';
+import { FaStar } from "react-icons/fa";
+import styles from "./StarRating.module.css";
 
 type StarRatingProps = {
   value: number;

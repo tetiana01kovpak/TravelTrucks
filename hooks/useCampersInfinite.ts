@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import { useInfiniteQuery } from '@tanstack/react-query';
-import { fetchCampers } from '@/lib/api/campers';
-import { PER_PAGE } from '@/lib/filters/schema';
-import { campersListKey } from '@/lib/query/keys';
-import type { FilterValues } from '@/types/camper';
+import { useInfiniteQuery } from "@tanstack/react-query";
+import { fetchCampers } from "@/lib/api/campers";
+import { PER_PAGE } from "@/lib/filters/schema";
+import { campersListKey } from "@/lib/query/keys";
+import type { FilterValues } from "@/types/camper";
 
 export function useCampersInfinite(filters: FilterValues) {
   return useInfiniteQuery({

@@ -1,6 +1,6 @@
-import { FaStar } from 'react-icons/fa';
-import { FiMapPin } from 'react-icons/fi';
-import styles from './RatingInline.module.css';
+import { FaStar } from "react-icons/fa";
+import MapIcon from "@/components/icons/MapIcon";
+import styles from "./RatingInline.module.css";
 
 type RatingInlineProps = {
   rating: number;
@@ -20,12 +20,12 @@ export default function RatingInline({
       <span className={styles.item}>
         <FaStar aria-hidden="true" className={styles.star} />
         <span className={underline ? styles.underline : undefined}>
-          {rating.toFixed(1)}({totalReviews}{' '}
-          {totalReviews === 1 ? 'Review' : 'Reviews'})
+          {rating.toFixed(1)}({totalReviews}{" "}
+          {totalReviews === 1 ? "Review" : "Reviews"})
         </span>
       </span>
       <span className={styles.item}>
-        <FiMapPin aria-hidden="true" className={styles.pin} />
+        <MapIcon aria-hidden="true" className={styles.pin} />
         <span>{location}</span>
       </span>
     </div>

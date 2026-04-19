@@ -9,7 +9,7 @@
 
 .card {
   padding: 16px;
-  background: var(--color-inputs);
+  background: #f7f7f7;
   border-radius: 16px;
 }
 
@@ -24,8 +24,8 @@
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: var(--color-white);
-  color: var(--color-button);
+  background: #ffffff;
+  color: #829b91;
   display: grid;
   place-items: center;
   font-weight: 600;
@@ -44,22 +44,22 @@
 .name {
   margin: 0;
   font-weight: 500;
-  font-size: var(--fs-body);
-  line-height: var(--lh-body);
-  color: var(--color-main);
+  font-size: 16px;
+  line-height: 24px;
+  color: #101828;
 }
 
 .comment {
   margin: 0;
-  color: var(--color-text);
-  font-size: var(--fs-body);
-  line-height: var(--lh-body);
+  color: #475467;
+  font-size: 16px;
+  line-height: 24px;
 }
 
 .empty {
   padding: 32px 16px;
-  color: var(--color-gray);
+  color: #6c717b;
   text-align: center;
-  background: var(--color-inputs);
+  background: #f7f7f7;
   border-radius: 10px;
 }

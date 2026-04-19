@@ -1,5 +1,5 @@
 .layout {
-  max-width: var(--container-max);
+  max-width: 1440px;
   margin: 0 auto;
   padding: 0 64px;
   display: flex;
@@ -32,9 +32,9 @@
 }
 
 .count {
-  font-size: var(--fs-body);
-  line-height: var(--lh-body);
-  color: var(--color-gray);
+  font-size: 16px;
+  line-height: 24px;
+  color: #6c717b;
 }
 
 .footer {
@@ -54,23 +54,23 @@
 }
 
 .errorMsg {
-  color: var(--color-main);
+  color: #101828;
   font-weight: 500;
 }
 
 .emptyMsg {
-  color: var(--color-text);
+  color: #475467;
 }
 
 .retry {
   padding: 12px 32px;
   border-radius: 200px;
-  background: var(--color-button);
-  color: var(--color-white);
+  background: #829b91;
+  color: #ffffff;
   font-weight: 500;
   transition: background 150ms ease;
 }
 
 .retry:hover {
-  background: var(--color-button-hover);
+  background: #6d7b75;
 }

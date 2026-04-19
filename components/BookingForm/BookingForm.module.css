@@ -1,7 +1,7 @@
 .card {
   padding: 44px;
-  background: var(--color-white);
-  border: 1px solid var(--color-gray-light);
+  background: #ffffff;
+  border: 1px solid #dadde1;
   border-radius: 16px;
   display: flex;
   flex-direction: column;
@@ -15,17 +15,17 @@
 }
 
 .title {
-  font-size: var(--fs-h3);
-  line-height: var(--lh-h3);
+  font-size: 20px;
+  line-height: 24px;
   font-weight: 600;
-  color: var(--color-main);
+  color: #101828;
   margin: 0;
 }
 
 .subtitle {
-  color: var(--color-text);
-  font-size: var(--fs-body);
-  line-height: var(--lh-body);
+  color: #6c717b;
+  font-size: 16px;
+  line-height: 24px;
   margin: 0;
 }
 
@@ -44,25 +44,25 @@
 .input,
 .textarea {
   width: 100%;
-  background: var(--color-inputs);
+  background: #f7f7f7;
   border: 1px solid transparent;
   border-radius: 12px;
   padding: 18px 16px;
-  font-size: var(--fs-body);
-  line-height: var(--lh-body);
-  color: var(--color-main);
+  font-size: 16px;
+  line-height: 24px;
+  color: #101828;
   transition: border-color 150ms ease;
 }
 
 .input::placeholder,
 .textarea::placeholder {
-  color: var(--color-gray);
+  color: #6c717b;
 }
 
 .input:focus,
 .textarea:focus {
   outline: none;
-  border-color: var(--color-button);
+  border-color: #829b91;
 }
 
 .textarea {
@@ -82,12 +82,12 @@
   width: 100%;
   padding: 16px 60px;
   border-radius: 200px;
-  background: var(--color-button);
-  color: var(--color-white);
+  background: #829b91;
+  color: #ffffff;
   font-weight: 500;
-  font-size: var(--fs-body);
-  line-height: var(--lh-body);
-  letter-spacing: var(--ls-button);
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.005em;
   transition: background 150ms ease;
   display: inline-flex;
   align-items: center;
@@ -96,7 +96,7 @@
 }
 
 .submit:hover:not(:disabled) {
-  background: var(--color-button-hover);
+  background: #6d7b75;
 }
 
 .submit:disabled {

@@ -3,11 +3,22 @@
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 48px;
   padding: 24px;
-  background: var(--color-white);
-  border: 1px solid var(--color-gray-light);
-  border-radius: var(--radius-md);
+  background: #f7f7f7;
+  border-radius: 20px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.filtersBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
 .field {
@@ -18,29 +29,25 @@
 
 .fieldLabel {
   font-weight: 500;
-  color: var(--color-gray);
-  font-size: var(--fs-body);
-  line-height: var(--lh-body);
+  color: #6c717b;
+  font-size: 16px;
+  line-height: 24px;
 }
 
 .locationWrap {
-  position: relative;
   display: flex;
   align-items: center;
-  background: var(--color-inputs);
-  border-radius: 10px;
-  padding: 18px 16px 18px 46px;
+  gap: 8px;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 18px 20px;
 }
 
 .locationIcon {
-  position: absolute;
-  left: 16px;
-  top: 50%;
-  transform: translateY(-50%);
   width: 20px;
   height: 20px;
-  color: var(--color-main);
-  stroke-width: 2;
+  color: #6c717b;
+  flex-shrink: 0;
 }
 
 .locationInput {
@@ -48,20 +55,20 @@
   background: transparent;
   border: 0;
   outline: 0;
-  font-size: var(--fs-body);
-  line-height: var(--lh-body);
-  color: var(--color-main);
+  font-size: 16px;
+  line-height: 24px;
+  color: #101828;
 }
 
 .locationInput::placeholder {
-  color: var(--color-gray);
+  color: #6c717b;
 }
 
 .heading {
-  font-size: var(--fs-body);
-  line-height: var(--lh-body);
-  font-weight: 500;
-  color: var(--color-gray);
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 600;
+  color: #101828;
   margin: 0;
 }
 
@@ -69,18 +76,16 @@
   border: 0;
   padding: 0;
   margin: 0;
-  border-top: 1px solid var(--color-gray-light);
-  padding-top: 24px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 8px;
 }
 
 .groupLabel {
-  font-weight: 600;
-  font-size: var(--fs-h3);
-  line-height: var(--lh-h3);
-  color: var(--color-main);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #6c717b;
   padding: 0;
 }
 
@@ -105,7 +110,7 @@
   width: 24px;
   height: 24px;
   margin: 0;
-  border: 1px solid var(--color-gray);
+  border: 1px solid #475467;
   border-radius: 50%;
   position: relative;
   cursor: pointer;
@@ -113,48 +118,48 @@
 }
 
 .radio:hover {
-  border-color: var(--color-main);
+  border-color: #101828;
 }
 
 .radio:checked {
-  border-color: var(--color-main);
+  border-color: #101828;
 }
 
 .radio:checked::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 5px;
-  background: var(--color-main);
+  background: #101828;
   border-radius: 50%;
 }
 
 .optionLabel {
-  font-size: var(--fs-body);
-  line-height: var(--lh-body);
-  color: var(--color-main);
+  font-size: 16px;
+  line-height: 24px;
+  color: #101828;
   cursor: pointer;
 }
 
 .actions {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px;
 }
 
 .searchBtn {
   padding: 16px 60px;
   border-radius: 200px;
-  background: var(--color-button);
-  color: var(--color-white);
+  background: #829b91;
+  color: #ffffff;
   font-weight: 500;
-  font-size: var(--fs-body);
-  line-height: var(--lh-body);
-  letter-spacing: var(--ls-button);
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.005em;
   transition: background 150ms ease;
 }
 
 .searchBtn:hover {
-  background: var(--color-button-hover);
+  background: #6d7b75;
 }
 
 .clearBtn {
@@ -164,17 +169,17 @@
   gap: 8px;
   padding: 16px 40px;
   border-radius: 200px;
-  background: var(--color-white);
-  color: var(--color-main);
-  border: 1px solid var(--color-gray-light);
+  background: #ffffff;
+  color: #101828;
+  border: 1px solid #dadde1;
   font-weight: 500;
-  font-size: var(--fs-body);
-  line-height: var(--lh-body);
+  font-size: 16px;
+  line-height: 24px;
   transition: border-color 150ms ease;
 }
 
 .clearBtn:hover {
-  border-color: var(--color-button);
+  border-color: #6d7b75;
 }
 
 .clearBtn svg {
